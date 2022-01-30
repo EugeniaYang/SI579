@@ -1,13 +1,19 @@
-body {
-    background-color: lightblue;
+:root {
+    --very-peri-color: #605a9f;
   }
-  
+
 h1 {
-    color: white;
     text-align: center;
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
+
 }
 h2 {
-    color: white;
+    font-family: 'Tangerine', serif;
+    font-size: 32px;
+	text-shadow: 4px 4px 4px #aaa;
+    animation-duration: 5s;
     text-align: center;
 } 
 p {
@@ -18,10 +24,29 @@ p {
 a {
     font-family: verdana;
     font-size: 18px;
+    color:currentColor;
 }
 
 img{
     height: 50%;
     width: 50%;
     margin-left: 25%;
+    animation-name: initial-img;
+    animation-duration: 5s;
+}
+
+@keyframes initial-img{
+    from{width: 20%;margin-left: 40%;}
+    to{width: 50%;margin-left: 25%;}
+}
+
+.day   { background: #eee; color:var(--very-peri-color); }
+
+
+@media (prefers-color-scheme: dark) {
+  .day.dark-scheme   { background:  #333; color: rgb(231, 213, 233); }
+}
+
+@media (prefers-color-scheme: light) {
+  .day.light-scheme   { background: white; color:  var(--very-peri-color); }
 }
