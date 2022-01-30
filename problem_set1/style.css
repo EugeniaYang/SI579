@@ -31,14 +31,19 @@ img{
     height: 50%;
     width: 50%;
     margin-left: 25%;
+
+}
+
+#portrait-pic, #city-pic {
+    width: 30%;
+    margin-left: 35%;
     animation-name: initial-img;
     animation-duration: 5s;
 }
 
-
 @keyframes initial-img{
     from{width: 20%;margin-left: 40%;}
-    to{width: 50%;margin-left: 25%;}
+    to{width: 30%;margin-left: 35%;}
 }
 
 .day   { background: #eee; color:var(--very-peri-color); }
