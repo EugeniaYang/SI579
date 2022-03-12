@@ -114,20 +114,21 @@ function getDatamuseSimilarToUrl(ml) {
  */
 function addToSavedWords(word) {
   // You'll need to finish this...
+  savedWordsArray.push(word);
+  updateSavedWords()
 }
 
 // Add additional functions/callbacks here.
-function saveBtn(word) {
-  //TODO
-  let selectButtons = (".select");
-  for (btn of selectButtons) {
-    btn.addEventListener("click", () => {
-      console.log(btn.parentNode.innerHTML)
-      // addToSavedWords(btn.parentNode)
-    });
+function updateSavedWords(){
+  savedWords.innerHTML='';
+  const len = savedWordsArray.length;
+  if (len==0){
+    savedWords.innerHTML='(none)'
+  }
+  else{
+    savedWords.innerHTML=savedWordsArray.join()
   }
 }
-
 function callback_rhyme(data) {
   if (Object.keys(data).length == 0) {
     wordOutput.innerHTML = "(no results)";
@@ -137,10 +138,8 @@ function callback_rhyme(data) {
     for (group in grouped_data) {
       wordOutput.innerHTML += `<h3>Syllables: ${group}</h3><ul>`;
       for (item of grouped_data[group]) {
-        word=item["word"]
-        wordOutput.innerHTML += `<li>`+word+`<button type="button" class="btn select" style="background-color:green; color:white">(save)</button> </li>`;
-        //TODO: add the save function for the new button
-        saveBtn(item["word"]);
+        wordOutput.innerHTML += `<li>${item["word"]}<button type="button" class="btn select" style="background-color:green; color:white" onclick="addToSavedWords('${item["word"]}')">(save)</button>
+          </li>`;
       }
       wordOutput.innerHTML += `</ul>`;
     }
@@ -153,9 +152,9 @@ function callback_similar(data) {
   } else {
     wordOutput.innerHTML = "";
     for (item of data) {
-      wordOutput.innerHTML += `<li><p>${item["word"]}</p><button type="button" class="btn select" style="background-color:green; color:white">(save)</button> </li>`;
-      //TODO: add the save function for the new button
-      saveBtn(item["word"]);
+      wordOutput.innerHTML += `<li>${item["word"]}
+      <button type="button" class="btn select" style="background-color:green; color:white" onclick="addToSavedWords('${item["word"]}')">(save)</button>
+      </li>`;
     }
   }
 }
@@ -182,4 +181,4 @@ wordInput.addEventListener("keyup", (event) => {
   }
 });
 
-
+updateSavedWords()
