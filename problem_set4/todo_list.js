@@ -64,9 +64,3 @@ function dateAndTimeToTimestamp(dateInputElement, timeInputElement) {
         return false;
     }
 }
-
-
-// function removeTask(){
-//     const task = ;
-//     task.remove();
-// }
