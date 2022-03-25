@@ -1,7 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import RhymeListing from "./components/RhymeListing";
+import { useEffect, useState } from "react";
+import ShowRhymeButton from "./components/ShowRhymeButton";
+
 
 function App() {
+
+    const [rhymedWords, setRhymedWords] = useState([]);
+
+
+    useEffect(() => {
+
+        fetch(`https://api.datamuse.com/words?${new URLSearchParams({rel_rhy: "hello".value,}).toString()}`)
+            .then((response) => response.json())
+            .then((json) =>setRhymedWords(Object.values(json)));
+    }, []);
+
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,11 +32,13 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Hello World! Time to learn React!
         </a>
+        <ShowRhymeButton setRhymedWords={setRhymedWords} />
+        <RhymeListing rhymedWords ={rhymedWords} />
       </header>
     </div>
-  );
+   );
 }
 
 export default App;
