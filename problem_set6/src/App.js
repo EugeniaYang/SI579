@@ -3,6 +3,7 @@ import './App.css';
 import RhymeListing from "./components/RhymeListing";
 import { useEffect, useState } from "react";
 import ShowRhymeButton from "./components/ShowRhymeButton";
+import SearchBar from "./components/SearchBar";
 
 
 function App() {
@@ -20,19 +21,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          SI570 RhymeFinder by Eugenia Yang
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello World! Time to learn React!
-        </a>
-        <ShowRhymeButton setRhymedWords={setRhymedWords} />
+          <SearchBar setRhymedWords={setRhymedWords} />
         <RhymeListing rhymedWords ={rhymedWords} />
       </header>
     </div>
