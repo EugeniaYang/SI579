@@ -8,11 +8,9 @@ import ShowRhymeButton from "./components/ShowRhymeButton";
 function App() {
 
     const [rhymedWords, setRhymedWords] = useState([]);
-
-
+    const [inputWord, setInputWord] = useState([]);
     useEffect(() => {
-
-        fetch(`https://api.datamuse.com/words?${new URLSearchParams({rel_rhy: "hello".value,}).toString()}`)
+        fetch(`https://api.datamuse.com/words?${new URLSearchParams({rel_rhy: inputWord.value,}).toString()}`)
             .then((response) => response.json())
             .then((json) =>setRhymedWords(Object.values(json)));
     }, []);
