@@ -1,5 +1,6 @@
 import './RhymeListing.css'
 import {useState} from "react";
+import WordInstance from "./WordInstance";
 
 const RhymeListing = (props)=> {
     console.log("result")
@@ -52,50 +53,28 @@ const RhymeListing = (props)=> {
     }
     const generateRhyme = ()=> {
         let wordOutput = [];
-        props.rhymedWords.forEach((eventInstance, index) =>
+
+        props.rhymedWords.forEach((wordInstance, index) =>
             // Add an event's "markup" to the eventsToShow array.
-            eventsToShow.push(
-                <EventInstance
-                    setStarredEvents={setStarredEvents}
+            wordOutput.push(
+                <WordInstance
+                    word={wordInstance.word}
                     key={index}
-                    title={eventInstance.event_title}>
-                    <EventDateTime
-                        dateStart={eventInstance.date_start}
-                        timeStart={eventInstance.time_start}
-                        timeEnd={eventInstance.time_end}
-                    />
-                    <EventInfo
-                        title={eventInstance.event_title}
-                        description={eventInstance.description}
-                    />
-                </EventInstance>
+                    >
+                </WordInstance>
             )
         );
 
-        if (Object.keys(props.rhymedWords).length === 0) {
-            wordOutput.innerHTML = "(no results)";
-        } else {
-            let grouped_data = groupBy(props.rhymedWords, "numSyllables");
-            wordOutput.innerHTML = "";
-            for (let group in grouped_data) {
-                wordOutput.innerHTML += `<h3>Syllables: ${group}</h3><ul>`;
-                for (let item of grouped_data[group]) {
-                    wordOutput.innerHTML += `<li>${item["word"]}<button type="button" class="btn select" style="background-color:green; color:white" onclick="addToSavedWords('${item["word"]}')">(save)</button>
-          </li>`;
-                }
-                wordOutput.innerHTML += `</ul>`;
-            }
-        }
         return wordOutput;
     }
 
 
-    if (props.rhymedWords.length > 0) {
+    if (props.rhymedWords) {
         console.log(props.rhymedWords)
         return (
             <div className="RhymeListing">
                 <h1>Here are the rhymed words!</h1>
-                <p> {generateRhyme()} </p>
+                {generateRhyme()}
             </div>
         )
     }
