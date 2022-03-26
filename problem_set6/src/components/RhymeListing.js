@@ -52,6 +52,26 @@ const RhymeListing = (props)=> {
     }
     const generateRhyme = ()=> {
         let wordOutput = [];
+        props.rhymedWords.forEach((eventInstance, index) =>
+            // Add an event's "markup" to the eventsToShow array.
+            eventsToShow.push(
+                <EventInstance
+                    setStarredEvents={setStarredEvents}
+                    key={index}
+                    title={eventInstance.event_title}>
+                    <EventDateTime
+                        dateStart={eventInstance.date_start}
+                        timeStart={eventInstance.time_start}
+                        timeEnd={eventInstance.time_end}
+                    />
+                    <EventInfo
+                        title={eventInstance.event_title}
+                        description={eventInstance.description}
+                    />
+                </EventInstance>
+            )
+        );
+
         if (Object.keys(props.rhymedWords).length === 0) {
             wordOutput.innerHTML = "(no results)";
         } else {
