@@ -1,7 +1,6 @@
 import './SearchBar.css'
-import ShowRhymeButton from "./ShowRhymeButton";
 import {useState} from "react";
-
+import {Button} from "bootstrap";
 const SearchBar = (props) => {
     const [theWord, setTheWord] = useState('');
     const getDatamuseRhymeUrl = (rel_rhy) => {
@@ -32,8 +31,8 @@ const SearchBar = (props) => {
                 value={theWord}
                 onChange={(e) => setTheWord(e.target.value)}
             />
-            <button type='submit'>Find Rhyme</button>
-            <button type='submit'>Find Similar</button>
+            <Button variant="primary" type='submit' >Find Rhyme</Button>
+            <Button variant="secondary" type='submit' >Find Similar</Button>
         </form>
     </div>);
 }
