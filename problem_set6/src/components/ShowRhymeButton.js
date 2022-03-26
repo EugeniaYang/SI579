@@ -7,6 +7,7 @@ const ShowRhymeButton = (props)=> {
     const submitHandler= (e)=>{
         e.preventDefault();
         console.log('submit')
+        setTheWord("hi")
         props.setRhymedWords((rhymedWords) => {
             return (
                 rhymedWords
