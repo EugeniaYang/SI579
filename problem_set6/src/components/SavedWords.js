@@ -1,7 +1,7 @@
 
 
 const SavedWords= ()=>{
-    return ('hi')
+    return (<div>'hi'</div>)
 }
 
 export default SavedWords;

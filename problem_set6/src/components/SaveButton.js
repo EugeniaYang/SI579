@@ -1,8 +1,8 @@
 import './SaveButton.css';
 import { useState } from 'react';
-
+import Button from 'react-bootstrap/Button';
 const SaveButton = (props) => {
-    const [isStarred, setIsStarred] = useState(false);
+    const [isSave, setIsSaved] = useState(false);
 
     const starButtonHandler = ()=>{
 
@@ -10,9 +10,9 @@ const SaveButton = (props) => {
 
 
     return (
-        <button onClick={starButtonHandler} >
+        <Button variant='success' onClick={starButtonHandler} >
         Save
-    </button>)
+    </Button>)
 }
 
 export default SaveButton;
