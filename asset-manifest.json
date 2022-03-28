@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/EugeniaYang/SI579/tree/master/practiceMidterm2/static/css/main.2f631834.css",
-    "main.js": "/EugeniaYang/SI579/tree/master/practiceMidterm2/static/js/main.7cc2c500.js",
-    "static/media/problem_2.gif": "/EugeniaYang/SI579/tree/master/practiceMidterm2/static/media/problem_2.1e14a6959e511d247517.gif",
-    "static/media/problem_4.gif": "/EugeniaYang/SI579/tree/master/practiceMidterm2/static/media/problem_4.61a54cb035b13c12551d.gif",
-    "static/media/problem_3.gif": "/EugeniaYang/SI579/tree/master/practiceMidterm2/static/media/problem_3.9a6bb7f39a91e1053726.gif",
-    "static/media/problem_5.gif": "/EugeniaYang/SI579/tree/master/practiceMidterm2/static/media/problem_5.b2a8b4dca5f846a9430b.gif",
-    "static/media/problem_1.gif": "/EugeniaYang/SI579/tree/master/practiceMidterm2/static/media/problem_1.52b590092ebc59cde29d.gif",
-    "index.html": "/EugeniaYang/SI579/tree/master/practiceMidterm2/index.html",
-    "main.2f631834.css.map": "/EugeniaYang/SI579/tree/master/practiceMidterm2/static/css/main.2f631834.css.map",
-    "main.7cc2c500.js.map": "/EugeniaYang/SI579/tree/master/practiceMidterm2/static/js/main.7cc2c500.js.map"
+    "main.css": "/EugeniaYang/SI579/tree/gh-pages/static/css/main.2f631834.css",
+    "main.js": "/EugeniaYang/SI579/tree/gh-pages/static/js/main.ab5b8b8d.js",
+    "static/media/problem_2.gif": "/EugeniaYang/SI579/tree/gh-pages/static/media/problem_2.1e14a6959e511d247517.gif",
+    "static/media/problem_4.gif": "/EugeniaYang/SI579/tree/gh-pages/static/media/problem_4.61a54cb035b13c12551d.gif",
+    "static/media/problem_3.gif": "/EugeniaYang/SI579/tree/gh-pages/static/media/problem_3.9a6bb7f39a91e1053726.gif",
+    "static/media/problem_5.gif": "/EugeniaYang/SI579/tree/gh-pages/static/media/problem_5.b2a8b4dca5f846a9430b.gif",
+    "static/media/problem_1.gif": "/EugeniaYang/SI579/tree/gh-pages/static/media/problem_1.52b590092ebc59cde29d.gif",
+    "index.html": "/EugeniaYang/SI579/tree/gh-pages/index.html",
+    "main.2f631834.css.map": "/EugeniaYang/SI579/tree/gh-pages/static/css/main.2f631834.css.map",
+    "main.ab5b8b8d.js.map": "/EugeniaYang/SI579/tree/gh-pages/static/js/main.ab5b8b8d.js.map"
   },
   "entrypoints": [
     "static/css/main.2f631834.css",
-    "static/js/main.7cc2c500.js"
+    "static/js/main.ab5b8b8d.js"
   ]
 }
