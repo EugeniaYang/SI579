@@ -17,6 +17,8 @@ function App() {
                 <h1>
                     Rhyme Finder (579 Problem Set 5)
                 </h1>
+
+                <a href={"https://github.com/EugeniaYang/rhyme-finder-react.git"}>Link to source code</a>
                 <SavedWords savedWords={savedWords}>saved words</SavedWords>
                 <SearchBar setRhymedWords={setRhymedWords} setType={setType}/>
                 <RhymeListing rhymedWords={rhymedWords} setSavedWords={setSavedWords} type={type}/>
