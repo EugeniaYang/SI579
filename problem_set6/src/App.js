@@ -1,6 +1,6 @@
 import './App.css';
 import RhymeListing from "./components/RhymeListing";
-import {useEffect, useState} from "react";
+import { useState} from "react";
 import SearchBar from "./components/SearchBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from "react-bootstrap";
