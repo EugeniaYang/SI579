@@ -1,7 +1,17 @@
+const SavedWords = (props) => {
 
+    const showSavedWords = () => {
+        const len = props.savedWords.length;
+        if (len === 0) {
+            return ('none')
+        } else {
+            return props.savedWords.join();
+        }
+    }
 
-const SavedWords= ()=>{
-    return (<div>'hi'</div>)
+    return (<div>
+        <p>Saved words: {showSavedWords()}</p>
+    </div>)
 }
 
 export default SavedWords;

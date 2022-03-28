@@ -9,16 +9,17 @@ import SavedWords from "./components/SavedWords";
 function App() {
 
     const [rhymedWords, setRhymedWords] = useState([]);
-
+    const [type, setType] = useState([])
+    const [savedWords, setSavedWords] = useState([]);
     return (
         <Container>
             <header className="App-header">
                 <h1>
                     Rhyme Finder (579 Problem Set 5)
                 </h1>
-                <SavedWords>saved words</SavedWords>
-                <SearchBar setRhymedWords={setRhymedWords}/>
-                <RhymeListing rhymedWords={rhymedWords}/>
+                <SavedWords savedWords={savedWords}>saved words</SavedWords>
+                <SearchBar setRhymedWords={setRhymedWords} setType={setType}/>
+                <RhymeListing rhymedWords={rhymedWords} setSavedWords={setSavedWords} type={type}/>
             </header>
         </Container>
     );

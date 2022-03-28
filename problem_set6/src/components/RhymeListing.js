@@ -1,14 +1,7 @@
-import './RhymeListing.css'
-import {useState} from "react";
 import WordInstance from "./WordInstance";
+import SyllableInstance from "./SyllableInstance";
 
-const RhymeListing = (props)=> {
-    console.log("result")
-    console.log(props.rhymedWords)
-    const savedWordsArray = [];
-    const savedWords = [];
-
-
+const RhymeListing = (props) => {
     function groupBy(objects, property) {
         // If property is not a function, convert it to a function that accepts one argument (an object) and returns that object's
         // value for property (obj[property])
@@ -34,53 +27,42 @@ const RhymeListing = (props)=> {
         }
         return result;
     }
-    function addToSavedWords(word) {
-        // You'll need to finish this...
-        savedWordsArray.push(word);
-        updateSavedWords()
-    }
 
-// Add additional functions/callbacks here.
-    function updateSavedWords(){
-        savedWords.innerHTML='';
-        const len = savedWordsArray.length;
-        if (len===0){
-            savedWords.innerHTML='(none)'
-        }
-        else{
-            savedWords.innerHTML=savedWordsArray.join()
-        }
-    }
-    const generateRhyme = ()=> {
+    const generateWords = () => {
         let wordOutput = [];
-
-        props.rhymedWords.forEach((wordInstance, index) =>
-            // Add an event's "markup" to the eventsToShow array.
-            wordOutput.push(
-                <WordInstance
-                    word={wordInstance.word}
-                    key={index}
+        if (props.rhymedWords === '...loading')
+            return (<p>...loading</p>)
+        if (props.type === 'rhyme') {
+            if (props.rhymedWords.length === 0)
+                return <p>(no results)</p>
+            const groupedWords = groupBy(props.rhymedWords, 'numSyllables');
+            Object.entries(groupedWords).map(([key, value]) => {
+                wordOutput.push(<h3 key={-key}>{key} syllable:</h3>);
+                wordOutput.push(<SyllableInstance key={key} words={value} setSavedWords={props.setSavedWords}/>);
+            })
+        } else if (props.type === 'similar') {
+            if (props.rhymedWords.length === 0)
+                return <p>(no results)</p>
+            props.rhymedWords.forEach((wordInstance, index) =>
+                wordOutput.push(
+                    <WordInstance
+                        word={wordInstance.word}
+                        key={index}
+                        setSavedWords={props.setSavedWords}
                     >
-                </WordInstance>
-            )
-        );
+                    </WordInstance>
+                ))
+        }
 
         return wordOutput;
     }
 
 
-    if (props.rhymedWords) {
-        console.log(props.rhymedWords)
-        return (
-            <div className="RhymeListing">
-                <h1>Here are the rhymed words!</h1>
-                {generateRhyme()}
-            </div>
-        )
-    }
-    else {
-        return (<div className="RhymeListing" > ?</div>)
-    }
+    return (
+        <div className="RhymeListing">
+            {generateWords()}
+        </div>
+    )
 }
 
 export default RhymeListing

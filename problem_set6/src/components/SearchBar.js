@@ -1,52 +1,60 @@
-import './SearchBar.css'
 import {useState} from "react";
 import Button from 'react-bootstrap/Button';
-import { Form, FormControl, InputGroup} from "react-bootstrap";
+import {Form, FormControl, InputGroup} from "react-bootstrap";
 
 const SearchBar = (props) => {
     const [theWord, setTheWord] = useState('');
+    const [outputDescription, setOutputDescription] = useState('')
     const getDatamuseRhymeUrl = (rel_rhy) => {
         return `https://api.datamuse.com/words?${new URLSearchParams({
             rel_rhy: theWord,
         }).toString()}`;
     }
 
+    function getDatamuseSimilarToUrl(ml) {
+        return `https://api.datamuse.com/words?${new URLSearchParams({
+            ml: theWord,
+        }).toString()}`;
+    }
+
     const findRhyme = (e) => {
+        props.setType('rhyme')
         e.preventDefault();
-        console.log(theWord)
+        setOutputDescription('Words that rhymes with '+ `${theWord}`)
         if (theWord) {
             fetch(getDatamuseRhymeUrl({theWord}))
                 .then((response) => response.json())
                 .then((json) => props.setRhymedWords(Object.values(json)));
-
-            setTheWord('')
+            // setTheWord('')
         }
     }
 
     const findSimilar = (e) => {
+        props.setType('similar')
         e.preventDefault();
-        console.log(theWord)
+        setOutputDescription('Words with a similar meaning to '+ `${theWord}`)
         if (theWord) {
-            fetch(getDatamuseRhymeUrl({theWord}))
+            props.setRhymedWords('...loading');
+            fetch(getDatamuseSimilarToUrl({theWord}))
                 .then((response) => response.json())
                 .then((json) => props.setRhymedWords(Object.values(json)));
-
-            setTheWord('')
+            // setTheWord('')
         }
     }
 
     return (<div>
-            <Form >
-                <InputGroup>
+        <Form>
+            <InputGroup>
                 <FormControl
                     type='text'
                     value={theWord}
                     onChange={(e) => setTheWord(e.target.value)}
                 />
-                    <Button variant="primary" type='submit' onClick={findRhyme}>Find Rhyme</Button>
-                    <Button variant="secondary" type='submit' onClick={findSimilar}>Find Similar</Button>
-                </InputGroup>
-            </Form>
+                <Button variant="primary" type='submit' onClick={findRhyme}>Show rhyming words</Button>
+                <Button variant="secondary" type='submit' onClick={findSimilar}>Show synonyms</Button>
+            </InputGroup>
+        </Form>
+        <h2>{outputDescription}</h2>
     </div>);
 }
 

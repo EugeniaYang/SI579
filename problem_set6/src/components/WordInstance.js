@@ -1,13 +1,19 @@
-import './WordInstance.css';
-import SaveButton from "./SaveButton";
-import {useState} from "react";
+import Button from "react-bootstrap/Button";
+
 
 const WordInstance = (props) => {
-    // const [isStarred, setIsStarred] = useState(false);
-    return <li className="WordInstance">
+
+    const saveButtonHandler = () => {
+        props.setSavedWords((savedWords) => {
+            return [...savedWords, props.word]
+        })
+    }
+    return (<li className="WordInstance">
         {props.word}
-        <SaveButton/>
-    </li>
+        <Button variant='outline-success' onClick={saveButtonHandler}>
+            Save
+        </Button>
+    </li>)
 }
 
 export default WordInstance;
