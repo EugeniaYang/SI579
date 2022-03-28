@@ -2,7 +2,7 @@
   "name": "prac-mt2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "SI579/practiceMidterm2",
+  "homepage": "https://github.com/EugeniaYang/SI579/tree/master/practiceMidterm2",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
