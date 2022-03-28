@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/SI579/problem_set6/static/css/main.927e4c44.css",
-    "main.js": "/SI579/problem_set6/static/js/main.542788f9.js",
-    "static/js/787.f9678fce.chunk.js": "/SI579/problem_set6/static/js/787.f9678fce.chunk.js",
-    "index.html": "/SI579/problem_set6/index.html",
-    "main.927e4c44.css.map": "/SI579/problem_set6/static/css/main.927e4c44.css.map",
-    "main.542788f9.js.map": "/SI579/problem_set6/static/js/main.542788f9.js.map",
-    "787.f9678fce.chunk.js.map": "/SI579/problem_set6/static/js/787.f9678fce.chunk.js.map"
+    "main.css": "/SI579/practiceMidterm2/static/css/main.2f631834.css",
+    "main.js": "/SI579/practiceMidterm2/static/js/main.b928eafa.js",
+    "static/media/problem_2.gif": "/SI579/practiceMidterm2/static/media/problem_2.1e14a6959e511d247517.gif",
+    "static/media/problem_4.gif": "/SI579/practiceMidterm2/static/media/problem_4.61a54cb035b13c12551d.gif",
+    "static/media/problem_3.gif": "/SI579/practiceMidterm2/static/media/problem_3.9a6bb7f39a91e1053726.gif",
+    "static/media/problem_5.gif": "/SI579/practiceMidterm2/static/media/problem_5.b2a8b4dca5f846a9430b.gif",
+    "static/media/problem_1.gif": "/SI579/practiceMidterm2/static/media/problem_1.52b590092ebc59cde29d.gif",
+    "index.html": "/SI579/practiceMidterm2/index.html",
+    "main.2f631834.css.map": "/SI579/practiceMidterm2/static/css/main.2f631834.css.map",
+    "main.b928eafa.js.map": "/SI579/practiceMidterm2/static/js/main.b928eafa.js.map"
   },
   "entrypoints": [
-    "static/css/main.927e4c44.css",
-    "static/js/main.542788f9.js"
+    "static/css/main.2f631834.css",
+    "static/js/main.b928eafa.js"
   ]
 }
